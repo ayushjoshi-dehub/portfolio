@@ -46,7 +46,10 @@ npm run dev
 
 ##🌐 Live Demo
 ---
+🔗https://joshiayush.netlify.app/
+OR
 🔗 https://joshiayush.com.np
+
 
 ##📬 Contact
 ---
