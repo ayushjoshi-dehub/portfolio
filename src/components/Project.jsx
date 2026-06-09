@@ -7,35 +7,42 @@ const Project = ({
   subDescription,
   href,
   image,
-  tags,
+  tags = [], // Added default empty array to safeguard map loop
   setPreview,
 }) => {
-  const [isHidden, setIsHidden] = useState(false);
+  // FIXED: Renamed state from isHidden to isOpen for logical clarity
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div
         className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
-        onMouseEnter={() => setPreview(image)}
-        onMouseLeave={() => setPreview(null)}
+        onMouseEnter={() => setPreview?.(image)} // Added optional chaining to prevent crashes if setPreview isn't passed
+        onMouseLeave={() => setPreview?.(null)}
       >
         <div>
-          <p className="text-2xl">{title}</p>
+          <p className="text-2xl font-semibold text-white">{title}</p>
           <div className="flex gap-5 mt-2 text-sand">
             {tags.map((tag) => (
-              <span key={tag.id}>{tag.name}</span>
+              <span key={tag.id || tag.name}>{tag.name}</span>
             ))}
           </div>
         </div>
+        
         <button
-          onClick={() => setIsHidden(true)}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
+          onClick={() => setIsOpen(true)} // Opens the modal
+          className="flex items-center gap-1 cursor-pointer hover-animation text-white"
         >
           Read More
-          <img src="assets/arrow-right.svg" className="w-5" />
+          <img src="assets/arrow-right.svg" className="w-5" alt="Arrow right" />
         </button>
       </div>
+      
+      {/* Divider line */}
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
-      {isHidden && (
+      
+      {/* Conditionally render modal when isOpen is true */}
+      {isOpen && (
         <ProjectDetails
           title={title}
           description={description}
@@ -43,7 +50,7 @@ const Project = ({
           image={image}
           tags={tags}
           href={href}
-          closeModal={() => setIsHidden(false)}
+          closeModal={() => setIsOpen(false)} // Closes the modal
         />
       )}
     </>
