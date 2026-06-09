@@ -6,7 +6,7 @@ A modern, responsive portfolio website built using **React + Vite** showcasing m
 
 ---
 
-## 🌟 Features
+🌟 Features
 
 - ⚡ Built with React 
 - 🎨 Modern UI with animations
@@ -19,7 +19,7 @@ A modern, responsive portfolio website built using **React + Vite** showcasing m
 
 ---
 
-## 🛠️ Tech Stack
+🛠️ Tech Stack
 
 - **Frontend:** React.js, Vite  
 - **Styling:** CSS / Tailwind  
@@ -31,9 +31,10 @@ A modern, responsive portfolio website built using **React + Vite** showcasing m
 ## 📂 Project Structure
 
 
+
 ---
 
-## 🚀 Getting Started
+🚀 Getting Started
 
 
 git clone https://github.com/ayushjoshi-dehub/portfolio.git
@@ -44,20 +45,26 @@ npm install
 
 npm run dev
 
-##🌐 Live Demo
+🌐 Live Demo
+
 ---
+🔗https://joshiayush.netlify.app/
+OR
 🔗 https://joshiayush.com.np
 
-##📬 Contact
+
+📬 Contact
 ---
+
 GitHub: https://github.com/ayushjoshi-dehub
 
 LinkedIn: https://www.linkedin.com/in/ayush-joshi-131052259/
 
 Email: joshiayush067@gmail.com
 
-##📌 Future Improvements
+📌 Future Improvements
 ---
+
 Add backend integration
 
 
